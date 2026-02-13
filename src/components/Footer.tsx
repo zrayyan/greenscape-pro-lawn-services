@@ -18,9 +18,9 @@ import { useState } from "react";
 
 const footerLinks = {
   services: [
-    { name: "Lawn Mowing", href: "/services/lawn-mowing" },
-    { name: "Fertilization", href: "/services/fertilization" },
-    { name: "Aeration", href: "/services/aeration" },
+    { name: "Smart Monitoring", href: "/services/smart-monitoring" },
+    { name: "Organic Fertilization", href: "/services/organic-fertilization" },
+    { name: "Precision Mowing", href: "/services/precision-mowing" },
     { name: "Snow Removal", href: "/services/snow-removal" },
   ],
   company: [
