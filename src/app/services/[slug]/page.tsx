@@ -186,6 +186,17 @@ interface ServicePageProps {
   params: Promise<{ slug: string }>;
 }
 
+export async function generateStaticParams() {
+  return [
+    { slug: 'smart-monitoring' },
+    { slug: 'organic-fertilization' },
+    { slug: 'precision-mowing' },
+    { slug: 'landscape-design' },
+    { slug: 'snow-removal' },
+    { slug: 'equipment-service' },
+  ];
+}
+
 export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
   const { slug } = await params;
   const service = services[slug as keyof typeof services];
