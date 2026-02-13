@@ -182,11 +182,11 @@ export function Footer() {
       <div className="border-t border-gray-800">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="text-gray-400 text-sm text-center order-3 md:order-1 md:text-left">
+            <div className="text-gray-400 text-sm text-center w-full order-3 md:order-1 md:text-left md:w-auto">
               © 2024 GreenScape Pro Lawn Services. All rights reserved.
             </div>
 
-            <div className="flex items-center justify-center gap-4 order-1 md:order-2">
+            <div className="flex items-center justify-center gap-4 w-full order-1 md:order-2 md:w-auto">
               <Link href="#" className="text-gray-400 hover:text-green-400 transition-colors">
                 <Facebook className="h-5 w-5" />
               </Link>
@@ -200,7 +200,7 @@ export function Footer() {
 
             <button
               onClick={scrollToTop}
-              className="flex items-center justify-center gap-2 text-gray-400 hover:text-green-400 transition-colors text-center order-2 md:order-3 md:justify-start"
+              className="flex items-center justify-center gap-2 text-gray-400 hover:text-green-400 transition-colors text-center w-full order-2 md:order-3 md:justify-start md:w-auto"
             >
               <span className="text-sm">Back to top</span>
               <ArrowUp className="h-4 w-4" />
