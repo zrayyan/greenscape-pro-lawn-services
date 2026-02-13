@@ -161,6 +161,16 @@ export function QuoteWizard() {
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Lawn Size (square feet)
                     </label>
+                    <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-3">
+                      <div className="text-center">
+                        <div className="text-2xl font-bold text-green-600">
+                          ${calculateQuote().toLocaleString()}
+                        </div>
+                        <div className="text-sm text-green-700">
+                          Estimated total per service
+                        </div>
+                      </div>
+                    </div>
                     <Input
                       type="range"
                       min="1000"
@@ -175,13 +185,16 @@ export function QuoteWizard() {
                       <span className="font-semibold">{formData.lawnSize.toLocaleString()} sq ft</span>
                       <span>20,000+ sq ft</span>
                     </div>
+                    <div className="text-xs text-gray-500 mt-1 text-center">
+                      ${((formData.lawnSize * 0.015) * (formData.frequency === "weekly" ? 1.3 : 1)).toFixed(2)} base cost
+                    </div>
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Service Frequency
                     </label>
-                    <div className="grid grid-cols-3 gap-3">
+                    <div className="grid grid-cols-3 gap-3 mb-4">
                       {["weekly", "bi-weekly", "monthly"].map((freq) => (
                         <button
                           key={freq}
@@ -192,9 +205,15 @@ export function QuoteWizard() {
                               : "border-gray-200 hover:border-gray-300"
                           }`}
                         >
-                          {freq.charAt(0).toUpperCase() + freq.slice(1)}
+                          <div className="font-medium">{freq.charAt(0).toUpperCase() + freq.slice(1)}</div>
+                          <div className="text-xs text-gray-500 mt-1">
+                            ${Math.round(calculateQuote() * (freq === "weekly" ? 1.3 : freq === "bi-weekly" ? 1 : 0.8)).toLocaleString()}
+                          </div>
                         </button>
                       ))}
+                    </div>
+                    <div className="text-xs text-gray-500 text-center">
+                      Prices shown are estimates and may vary based on specific lawn conditions
                     </div>
                   </div>
                 </div>
@@ -212,6 +231,17 @@ export function QuoteWizard() {
                 <h2 className="text-2xl font-semibold text-gray-900 mb-6">
                   Select Services
                 </h2>
+
+                <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-green-600">
+                      ${calculateQuote().toLocaleString()}
+                    </div>
+                    <div className="text-sm text-green-700">
+                      Current estimate • {formData.selectedServices.length} service{formData.selectedServices.length !== 1 ? 's' : ''} selected
+                    </div>
+                  </div>
+                </div>
 
                 <div className="space-y-4">
                   {services.map((service) => (
