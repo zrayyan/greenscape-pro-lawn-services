@@ -182,7 +182,7 @@ export function Footer() {
           <div className="text-center md:text-left">
             <div className="flex flex-col md:flex-row items-center justify-center md:justify-between gap-4">
               <div className="text-gray-400 text-sm order-3 md:order-1">
-                © 2024 GreenScape Pro Lawn Services. All rights reserved.
+                © {new Date().getFullYear()} GreenScape Pro Lawn Services. All rights reserved.
               </div>
 
               <div className="flex items-center justify-center gap-4 order-1 md:order-2">
