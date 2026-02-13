@@ -95,28 +95,28 @@ export function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Company Info */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
+          <div className="lg:col-span-2 text-center md:text-left">
+            <div className="flex items-center justify-center md:justify-start space-x-2 mb-4">
               <div className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center">
                 <span className="text-white font-bold text-lg">GS</span>
               </div>
               <span className="font-serif font-bold text-xl">GreenScape Pro</span>
             </div>
-            <p className="text-gray-300 mb-6 max-w-md">
+            <p className="text-gray-300 mb-6 max-w-md mx-auto md:mx-0">
               Precision lawn care services with cutting-edge technology and traditional expertise.
               Serving our community with excellence since 2009.
             </p>
 
             <div className="space-y-3">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center justify-center md:justify-start gap-3">
                 <Phone className="h-5 w-5 text-green-400" />
                 <span>(555) 123-4567</span>
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center justify-center md:justify-start gap-3">
                 <Mail className="h-5 w-5 text-green-400" />
                 <span>hello@greenscapepro.com</span>
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center justify-center md:justify-start gap-3">
                 <MapPin className="h-5 w-5 text-green-400" />
                 <span>Springfield, IL</span>
               </div>
@@ -124,7 +124,7 @@ export function Footer() {
           </div>
 
           {/* Services */}
-          <div>
+          <div className="text-center md:text-left">
             <h4 className="font-semibold mb-4">Services</h4>
             <ul className="space-y-2">
               {footerLinks.services.map((link) => (
@@ -141,7 +141,7 @@ export function Footer() {
           </div>
 
           {/* Company */}
-          <div>
+          <div className="text-center md:text-left">
             <h4 className="font-semibold mb-4">Company</h4>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
@@ -158,7 +158,7 @@ export function Footer() {
           </div>
 
           {/* Support */}
-          <div>
+          <div className="text-center md:text-left">
             <h4 className="font-semibold mb-4">Support</h4>
             <ul className="space-y-2">
               {footerLinks.support.map((link) => (
