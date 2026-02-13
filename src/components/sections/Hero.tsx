@@ -11,15 +11,10 @@ export function Hero() {
       {/* Background Video/Image */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-black/20" />
-        <video
-          autoPlay
-          muted
-          loop
-          className="w-full h-full object-cover"
-          poster="/images/hero-poster.jpg"
-        >
-          <source src="/videos/hero.mp4" type="video/mp4" />
-        </video>
+        <div
+          className="w-full h-full bg-cover bg-center"
+          style={{ backgroundImage: 'url(/images/hero-poster.jpg)' }}
+        />
       </div>
 
       <div className="relative z-10 container mx-auto px-4 text-center">
